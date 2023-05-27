@@ -53,7 +53,7 @@ public class UserController {
     @PostMapping("/changepw")
     public String changepw(@RequestBody User user){
         System.out.println(user);
-        User userResult = userMapper.selectOne(new QueryWrapper<User>().eq("username", user.getUserName()));
+        User userResult = userMapper.selectOne(new QueryWrapper<User>().eq("userName", user.getUserName()));
         if(userResult == null){
             return "该用户不存在";
         }
@@ -63,8 +63,8 @@ public class UserController {
 
         userResult.setPassword(user.getNewpw());
         userResult.setUserName(user.getUserName());
-        userMapper.update(userResult, new QueryWrapper<User>().eq("username", user.getUserName()));
-        userResult = userMapper.selectOne(new QueryWrapper<User>().eq("username", user.getUserName()));
+        userMapper.update(userResult, new QueryWrapper<User>().eq("userName", user.getUserName()));
+        userResult = userMapper.selectOne(new QueryWrapper<User>().eq("userName", user.getUserName()));
         System.out.println(userResult);
         return "修改成功";
     }

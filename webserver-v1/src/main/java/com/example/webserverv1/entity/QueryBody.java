@@ -8,9 +8,4 @@ public class QueryBody {
     private Integer index;
     private String query;
     private Integer id;
-//    public Query(Integer pageSize, Integer pageNum, Integer index){
-//        this.pageNum = pageNum;
-//        this.pageSize = pageSize;
-//        this.index = index;
-//    }
 }
